@@ -3,7 +3,7 @@
 
 This is a simple proof-of-concept Gemini API trading bot. For more info, please [visit my blog post](https://terencelucasyap.com/what-i-learned-from-building-crypto-trading-bot/).
 
-*Use with caution. Code is not optimised.*
+*Use with caution. Code is not optimised. Nor very [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)*
 ## Prerequisites
 
 * Python 3.8
@@ -18,12 +18,13 @@ Follow [this guide](https://terencelucasyap.com/how-to-set-up-vpc/) to set up a 
 
 You will need an IAM role with with the required priviledges to run the above services.
 
-## Deploy
-
+## Setup and Deploy
+It is highly recommended to [create a virtual environment](https://docs.python.org/3/library/venv.html).
 ```bash
-  $ sls deploy -v
+  $ python3 -m venv ./venv
+  $ pip install -r requirements.txt # Install Python Dependencies
+  $ sls deploy -v # Deploy to Lambda using Serverless
 ```
-
   
 ## Environment Variables
 
