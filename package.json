@@ -1,0 +1,15 @@
+{
+  "name": "gemini",
+  "version": "0.1.0",
+  "devDependencies": {
+    "serverless-python-requirements": "^5.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Papagoat/gemini-trading-bot.git"
+  },
+  "author": "Terence Lucas Yap",
+  "license": "ISC",
+  "homepage": "https://github.com/Papagoat/gemini-trading-bot#readme",
+  "description": "A simple Gemini trading bot"
+}

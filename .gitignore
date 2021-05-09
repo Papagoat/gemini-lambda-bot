@@ -1,0 +1,7 @@
+# Distribution / packaging
+__pycache__
+.Python
+.serverless
+.vscode
+venv
+node_modules

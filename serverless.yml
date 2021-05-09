@@ -1,0 +1,36 @@
+service: <LAMBDA-SERVICE-NAME>
+frameworkVersion: '2'
+plugins:
+  - serverless-python-requirements
+package:
+  exclude:
+    - node_modules/**
+custom:
+  pythonRequirements:
+    pythonBin: python3
+    dockerizePip: true
+    individually: true
+provider:
+  name: aws
+  runtime: python3.8
+  lambdaHashingVersion: 20201221
+  stage: dev
+  region: ap-southeast-1
+  profile: default
+  memorySize: 1024
+  timeout: 60
+  iam:
+    role: <IAM-ROLE>
+  vpc:
+    securityGroupIds:
+      - <SECURITY-GROUP>
+    subnetIds:
+      - <SUBNET>
+  deploymentBucket:
+    name: <DEPLOYMENT-BUCKET>
+functions:
+  main:
+    handler: handler.main
+    package: {}
+    events:
+      - schedule: rate(1 minute)
