@@ -41,7 +41,7 @@ To run this project, you will need the following credentials
 ## What's next?
 
 - Refactor codebase...when I'm not so lazy.
-- Implement different strategies. [Read more...](https://www.investopedia.com/articles/active-trading/101014/basics-algorithmic-trading-concepts-and-examples.asp)
+- Implement different algorithmic trading strategies. [Read more...](https://www.investopedia.com/articles/active-trading/101014/basics-algorithmic-trading-concepts-and-examples.asp)
 - Include backtesting?
 - Chilling in my own private island.
 ## Documentation
