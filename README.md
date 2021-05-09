@@ -1,7 +1,7 @@
 
 # A simple Gemini trading bot
 
-This is a simple proof-of-concept Gemini API trading bot. For more info, please [visit my blog post](https://terencelucasyap.com/what-i-learned-from-building-crypto-trading-bot/).
+This is a simple proof-of-concept Gemini API trading bot. For context, please [visit my blog post](https://terencelucasyap.com/what-i-learned-from-building-crypto-trading-bot/).
 
 *Use with caution. Code is not optimised nor [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)*
 ## Prerequisites
