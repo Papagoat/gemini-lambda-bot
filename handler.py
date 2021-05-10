@@ -13,11 +13,10 @@ def new_order(
     try:
         bought_transactions = get_redis_values("geminiState", "buy") or 0
         sold_transactions = get_redis_values("geminiState", "sell") or 0
-        reset = get_redis_values("geminiState", "reset")
     except Exception as e:
         print("Order Exception", e)
 
-    if reset is None or reset == 'True':
+    if bought_transactions == 'True':
         order = create_order(
             key,
             price_feed(key),
@@ -45,7 +44,6 @@ def new_order(
                 "notional_balance": notional_balance,
                 "buy": int(bought_transactions) + 1,
                 "sell": sold_transactions,
-                "reset": "False",
             }
             set_redis_values("geminiState", dict)
             print(f"{btc_balance} BTC bought at {base_price}")
@@ -83,7 +81,6 @@ def new_order(
                     "cash_balance": cash_balance,
                     "notional_balance": 0,
                     "sell": int(sold_transactions) + 1,
-                    "reset": "True"
                 }
                 set_redis_values("geminiState", dict)
                 telegram_notification(f"{executed_amount} BTC sold at {current_price}. Profit: {profit}")
@@ -108,7 +105,6 @@ def new_order(
                     "cash_balance": cash_balance,
                     "notional_balance": notional_balance,
                     "buy": int(bought_transactions) + 1,
-                    "reset": "False"
                 }
                 set_redis_values("geminiState", dict)
                 telegram_notification(f"{executed_amount} BTC bought at {current_price}")
@@ -118,6 +114,6 @@ def new_order(
 
 def main(self, func):
     try:
-        new_order("BTCUSD", 1)
+        new_order("BTCUSD", 10)
     except Exception as e:
         print("Main Exception", e)
