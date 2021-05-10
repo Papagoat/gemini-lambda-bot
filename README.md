@@ -1,9 +1,9 @@
 
 # A simple Gemini trading bot
 
-This is a simple proof-of-concept Gemini API trading bot. For more info, please [visit my blog post](https://terencelucasyap.com/what-i-learned-from-building-crypto-trading-bot/).
+This is a simple proof-of-concept Gemini API trading bot. For context, please [visit my blog post](https://terencelucasyap.com/what-i-learned-from-building-crypto-trading-bot/).
 
-*Use with caution. Code is not optimised.*
+*Use with caution. Code is not optimised nor [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)*
 ## Prerequisites
 
 * Python 3.8
@@ -18,12 +18,13 @@ Follow [this guide](https://terencelucasyap.com/how-to-set-up-vpc/) to set up a 
 
 You will need an IAM role with with the required priviledges to run the above services.
 
-## Deploy
-
+## Setup and Deploy
+It is highly recommended to [create a virtual environment](https://docs.python.org/3/library/venv.html).
 ```bash
-  $ sls deploy -v
+  $ python3 -m venv ./venv
+  $ pip install -r requirements.txt # Install Python Dependencies
+  $ sls deploy -v # Deploy to Lambda using Serverless
 ```
-
   
 ## Environment Variables
 
@@ -40,7 +41,7 @@ To run this project, you will need the following credentials
 ## What's next?
 
 - Refactor codebase...when I'm not so lazy.
-- Implement different strategies. [Read more...](https://www.investopedia.com/articles/active-trading/101014/basics-algorithmic-trading-concepts-and-examples.asp)
+- Implement different algorithmic trading strategies. [Read more...](https://www.investopedia.com/articles/active-trading/101014/basics-algorithmic-trading-concepts-and-examples.asp)
 - Include backtesting?
 - Chilling in my own private island.
 ## Documentation
